@@ -7,8 +7,9 @@ import { ICounter } from './model';
 
 
 export const counterReducer = createReducer(initialState,
-    on(increment, state => {
-        return { ...state, counter: state.counter + 1 }
+    on(increment,(state,action)=> {
+        console.log(action);
+        return { ...state, counter: state.counter + action.value }
     }),
     on(decrement, state => {
         return { ...state, counter: state.counter - 1 }

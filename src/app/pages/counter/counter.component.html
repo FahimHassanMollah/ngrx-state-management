@@ -1,4 +1,9 @@
-<p>{{(counter$ | async) | json}}</p>
+<p>{{(counter$ | async)?.counter}}</p>
+<br>
+<br>
+<input [(ngModel)]="value" type="text">
+<br>
+<br>
 <button (click)="incrementHandler()">Increment +</button>
 <br>
 <br>
