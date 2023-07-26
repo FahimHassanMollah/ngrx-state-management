@@ -1,3 +1,4 @@
+import { counterReducer } from './features/counter/reducer';
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -15,7 +16,7 @@ import { CounterComponent } from './pages/counter/counter.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({counter:counterReducer}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
   ],
   providers: [],

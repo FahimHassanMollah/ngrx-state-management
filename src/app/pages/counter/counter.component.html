@@ -1,1 +1,8 @@
-<p>counter works!</p>
+<p>{{(counter$ | async) | json}}</p>
+<button (click)="incrementHandler()">Increment +</button>
+<br>
+<br>
+<button>Decrement -</button>
+<br>
+<br>
+<button>Reset</button>
