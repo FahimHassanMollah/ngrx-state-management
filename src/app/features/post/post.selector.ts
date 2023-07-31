@@ -1,10 +1,10 @@
 import { createFeatureSelector, createSelector } from "@ngrx/store";
-import { ICounter } from "./post.model";
+import { IPost, IPosts } from "./post.model";
 
-export const counterFeatureSelector = createFeatureSelector<ICounter>('counter');
+export const postsSelector = createFeatureSelector<IPosts>('posts');
 
-export const counter = createSelector(counterFeatureSelector,(state:ICounter) => {
+export const posts = createSelector(postsSelector,(state) => {
     console.log(state);
     
-    return state.counter;
+    return state.posts;
 })

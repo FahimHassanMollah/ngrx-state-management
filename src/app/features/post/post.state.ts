@@ -1,6 +1,6 @@
-import { IPostState } from "./post.model";
+import { IPosts } from "./post.model";
 
-export const initialState: IPostState = {
+export const initialState: IPosts = {
     posts: [
 
         {

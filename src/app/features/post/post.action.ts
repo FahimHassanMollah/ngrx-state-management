@@ -1,5 +1,7 @@
 import { createAction, props } from "@ngrx/store";
+import { IPost } from "./post.model";
 
-export const increment = createAction('[Counter] Increment',props<{value:number}>());
-export const decrement = createAction('[Counter] Decrement');
-export const reset = createAction('[Counter] Reset');
+
+
+export const getPosts = createAction('[Post] GET_POST');
+// export const getPosts = createAction('[Post] GET_POST', props<{post:IPost}>());

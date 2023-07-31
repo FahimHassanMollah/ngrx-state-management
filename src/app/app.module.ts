@@ -9,16 +9,20 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CounterComponent } from './pages/counter/counter.component';
 import {FormsModule} from '@angular/forms';    
 import { postReducer } from './features/post/post.reducer';
+import { appReducer } from './store/store';
+
+import { PostComponent } from './pages/post/post.component';
 @NgModule({
   declarations: [
     AppComponent,
-    CounterComponent
+    CounterComponent,
+    PostComponent
   ],
   imports: [
     FormsModule,
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({counter:counterReducer,post:postReducer}),
+    StoreModule.forRoot(appReducer),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
   ],
   providers: [],
