@@ -5,6 +5,5 @@ export const postsSelector = createFeatureSelector<IPosts>('posts');
 
 export const posts = createSelector(postsSelector,(state) => {
     console.log(state);
-    
     return state.posts;
 })

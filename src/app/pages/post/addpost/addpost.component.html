@@ -1,0 +1,13 @@
+<p>addpost works!</p>
+<form [formGroup]="addPostForm" (ngSubmit)="addPostHandler">
+    <input formControlName="title" type="text" placeholder="title">
+    <br>
+    <div *ngIf="title.invalid && (title.dirty || title.touched)">
+
+    </div>
+    <br>
+    <textarea  formControlName="desciption" placeholder="description" id="" cols="30" rows="10"></textarea>
+    <br>
+    <br>
+    <button type="submit">add post</button>
+</form>

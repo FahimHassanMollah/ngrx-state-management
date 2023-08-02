@@ -1,4 +1,3 @@
-import { counterReducer } from './features/counter/reducer';
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -7,19 +6,21 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CounterComponent } from './pages/counter/counter.component';
-import {FormsModule} from '@angular/forms';    
-import { postReducer } from './features/post/post.reducer';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';    
 import { appReducer } from './store/store';
-
 import { PostComponent } from './pages/post/post.component';
+import { AddpostComponent } from './pages/post/addpost/addpost.component';
 @NgModule({
   declarations: [
     AppComponent,
     CounterComponent,
-    PostComponent
+    PostComponent,
+    AddpostComponent,
+    
   ],
   imports: [
     FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot(appReducer),
