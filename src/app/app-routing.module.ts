@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CounterComponent } from './pages/counter/counter.component';
 import { PostComponent } from './pages/post/post.component';
 import { AddpostComponent } from './pages/post/addpost/addpost.component';
+import { EditPostComponent } from './pages/post/edit-post/edit-post.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
       {
         path : 'add',
         component : AddpostComponent
+      },
+      {
+        path : 'edit/:id',
+        component : EditPostComponent
       }
     ]
   }

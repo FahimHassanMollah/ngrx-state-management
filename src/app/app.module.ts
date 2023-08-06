@@ -10,12 +10,14 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { appReducer } from './store/store';
 import { PostComponent } from './pages/post/post.component';
 import { AddpostComponent } from './pages/post/addpost/addpost.component';
+import { EditPostComponent } from './pages/post/edit-post/edit-post.component';
 @NgModule({
   declarations: [
     AppComponent,
     CounterComponent,
     PostComponent,
     AddpostComponent,
+    EditPostComponent,
     
   ],
   imports: [
