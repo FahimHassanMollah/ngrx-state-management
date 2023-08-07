@@ -4,7 +4,7 @@ import { posts } from './../../features/post/post.selector';
 
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { IPost, IPosts } from 'src/app/features/post/post.model';
+import { IPost, IPostState } from 'src/app/features/post/post.model';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -14,7 +14,7 @@ import { Observable } from 'rxjs';
 })
 export class PostComponent {
    posts$ : Observable<IPost[]>  = this.store.select(posts);
-  constructor(private store : Store<{posts :IPosts}>) {
+  constructor(private store : Store<{posts :IPostState}>) {
     this.store.select(posts).subscribe((data) => {
       console.log(data);
     })

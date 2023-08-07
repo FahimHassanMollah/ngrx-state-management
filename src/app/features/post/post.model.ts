@@ -3,6 +3,7 @@ export interface IPost {
     title: string;
     description: string;
 }
-export interface IPosts {
-    posts: IPost[];
+export interface IPostState {
+    posts: IPost[],
+    post : IPost | {}
 }

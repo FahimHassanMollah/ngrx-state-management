@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { addPost } from 'src/app/features/post/post.action';
-import { IPost, IPosts } from 'src/app/features/post/post.model';
+import { IPost, IPostState } from 'src/app/features/post/post.model';
 import { posts } from 'src/app/features/post/post.selector';
 
 @Component({
@@ -12,7 +12,9 @@ import { posts } from 'src/app/features/post/post.selector';
 })
 export class AddpostComponent {
   public posts : IPost[] = [];
-  constructor(private store : Store<{posts:IPosts}>) { };
+  constructor(
+    private store: Store<{ posts: IPostState }>,
+  ) { };
   postSubscriber = this.store.select(posts).subscribe((data)=> {
     this.posts = data;
   });

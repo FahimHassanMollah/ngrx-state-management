@@ -1,1 +1,35 @@
 <p>edit-post works!</p>
+<div>
+    {{currentPost | json}}
+</div>
+
+<form [formGroup]="editPostForm" (ngSubmit)="editPostHandler()">
+    
+    <input formControlName="title" type="text" placeholder="title">
+    <br>
+    <div *ngIf="title?.invalid && (title?.dirty || title?.touched)">
+        <div *ngIf="title!.errors?.['required']">
+            Name is required.
+        </div>
+    </div>
+    <div *ngIf="title?.invalid && (title?.dirty || title?.touched)">
+        <div *ngIf="title!.errors?.['minlength']">
+            min length 6.
+         </div>
+    </div>
+    <br>
+    <textarea formControlName="description" placeholder="description" id="" cols="30" rows="10"></textarea>
+    <br>
+    <div *ngIf="description?.invalid && (description?.dirty || description?.touched)">
+        <div *ngIf="description!.errors?.['required']">
+            Description is required.
+        </div>
+    </div>
+    <div *ngIf="description?.invalid && (description?.dirty || description?.touched)">
+        <div *ngIf="description!.errors?.['minlength']">
+            min length 6.
+         </div>
+    </div>
+    <br>
+    <button type="submit" [disabled]="editPostForm.invalid">update post</button>
+</form>
