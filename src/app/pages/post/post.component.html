@@ -17,6 +17,7 @@
         <td>{{post.description}}</td>
         <td>
             <a href="" [routerLink]="['/posts/edit',post.id]">Update</a>
+            <button (click)="deletePostHandler(post.id)">Delete</button>
         </td>
     </tr>
    </tbody>

@@ -1,4 +1,4 @@
-import { addPost, getPost, getPosts, updatePost } from './post.action';
+import { addPost, deletePost, getPost, getPosts, updatePost } from './post.action';
 import { createReducer, on } from "@ngrx/store";
 import { initialState } from './post.state';
 import { IPost } from './post.model';
@@ -25,6 +25,10 @@ export const postReducer = createReducer(initialState,
         const postIndex = posts.findIndex((post:IPost)=> post.id === action.post.id);  
         posts[postIndex] = action.post;
         return { ...state, posts: posts,post: action.post}
+    }),
+    on(deletePost, (state,action)=> {
+        const posts = JSON.parse(JSON.stringify(state.posts)).filter((post:IPost)=> post.id !== action.id);
+        return { ...state, posts: posts}
     })
 
 );
