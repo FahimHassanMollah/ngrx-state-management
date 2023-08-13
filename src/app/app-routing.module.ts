@@ -4,6 +4,7 @@ import { CounterComponent } from './pages/counter/counter.component';
 import { PostComponent } from './pages/post/post.component';
 import { AddpostComponent } from './pages/post/addpost/addpost.component';
 import { EditPostComponent } from './pages/post/edit-post/edit-post.component';
+import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
         component : EditPostComponent
       }
     ]
+  },
+  {
+    path: "login",
+    component: LoginComponent
   }
 ];
 

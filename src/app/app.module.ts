@@ -11,6 +11,7 @@ import { appReducer } from './store/store';
 import { PostComponent } from './pages/post/post.component';
 import { AddpostComponent } from './pages/post/addpost/addpost.component';
 import { EditPostComponent } from './pages/post/edit-post/edit-post.component';
+import { LoginComponent } from './pages/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +19,7 @@ import { EditPostComponent } from './pages/post/edit-post/edit-post.component';
     PostComponent,
     AddpostComponent,
     EditPostComponent,
+    LoginComponent,
     
   ],
   imports: [

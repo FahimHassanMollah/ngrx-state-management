@@ -1,0 +1,33 @@
+<p>login works!</p>
+
+<form [formGroup]="loginForm" (ngSubmit)="loginHandler()">
+    
+    <input formControlName="email" type="email" placeholder="email">
+    <br>
+    <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+        <div *ngIf="email!.errors?.['required']">
+            Email is required.
+        </div>
+    </div>
+    <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+        <div *ngIf="email!.errors?.['email']">
+            Enter a valid email.
+         </div>
+    </div>
+    <br>
+    {{password?.errors | json}}
+    <input type="password" formControlName="password" name="password" id="">
+    <br>
+    <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+        <div *ngIf="password!.errors?.['required']">
+            password is required.
+        </div>
+    </div>
+    <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+        <div *ngIf="password!.errors?.['minlength']">
+            min length 6.
+         </div>
+    </div>
+    <br>
+    <button type="submit" [disabled]="loginForm.invalid">Login</button>
+</form>
