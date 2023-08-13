@@ -15,7 +15,6 @@
          </div>
     </div>
     <br>
-    {{password?.errors | json}}
     <input type="password" formControlName="password" name="password" id="">
     <br>
     <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">

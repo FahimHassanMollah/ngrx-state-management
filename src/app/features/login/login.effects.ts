@@ -1,55 +1,26 @@
-//wtite a sime effect class here 
-// import { Injectable } from '@angular/core';
-// import { Actions, createEffect, ofType } from '@ngrx/effects';
-// import { EMPTY } from 'rxjs';
-// import { map, mergeMap, catchError } from 'rxjs/operators';
-// import { LoginService } from 'src/app/services/login/login.service';
-//
-// @Injectable()
-// export class LoginEffects {
-//  
-//   loadLogins$ = createEffect(() => this.actions$.pipe(
-//     ofType('[Login] Load Logins'),
-//     mergeMap(() => this.loginService.login()
-//       .pipe(
-//         map(logins => ({ type: '[Login] Load Logins Success', payload: logins })),
-//         catchError(() => EMPTY)
-//       ))
-//     )    
-//   );
-//
-//   constructor(
-//     private actions$: Actions,
-//     private loginService: LoginService
-//   ) {}
-//
-// }
-
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { EMPTY } from 'rxjs';
 import { map, mergeMap, catchError } from 'rxjs/operators';
 import { LoginService } from 'src/app/services/login/login.service';
-import { loginStart } from './login.actions';
+import { loginStart, loginSuccess } from './login.actions';
 
 @Injectable()
 export class LoginEffects {
+    constructor(private actions$: Actions, private loginService: LoginService) { }
 
-    constructor(
-        private actions$: Actions,
-        private loginService: LoginService
-    ) { }
-
-
-    loadLogins$ = createEffect(() => this.actions$.pipe(
-        ofType(loginStart),
-        mergeMap(() => this.loginService.login('','')
-            .pipe(
-                map(logins => ({ type: '[Login] Load Logins Success', payload: logins })),
-                catchError(() => EMPTY)
-            ))
-    )
+    loginEffectHandler$ = createEffect(() =>
+        this.actions$.pipe(
+            ofType(loginStart),
+            mergeMap((action) => {
+                return this.loginService.login(action.email, action.password).pipe(
+                    map((data) => {
+                        console.log(data);
+                        return loginSuccess({ email: '', userId: '', token: '', expirationDate: new Date(new Date().getTime() + +4 * 1000) });
+                    }),
+                    catchError(() => EMPTY)
+                );
+            })
+        )
     );
-
-
 }

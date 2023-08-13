@@ -14,6 +14,7 @@ import { EditPostComponent } from './pages/post/edit-post/edit-post.component';
 import { LoginComponent } from './pages/login/login.component';
 import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginEffects } from './features/login/login.effects';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     StoreModule.forRoot(appReducer),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
-    EffectsModule.forRoot([])
+    EffectsModule.forRoot([LoginEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]

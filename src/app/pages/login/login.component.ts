@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { loginStart } from 'src/app/features/login/login.actions';
 
 @Component({
   selector: 'app-login',
@@ -8,20 +10,24 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent {
   public loginForm!: FormGroup;
-  constructor(private fb: FormBuilder) { 
+  constructor(
+    private fb: FormBuilder,
+    private store: Store,
+  ) {
     this.loginForm = this.fb.group({
-      email: ['',[ Validators.required,Validators.email]],
-      password: ['',[ Validators.required,Validators.minLength(6)]]
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
 
-  get email() { return this.loginForm.get('email')}
-  get password() { return this.loginForm.get('password')}
+  get email() { return this.loginForm.get('email') }
+  get password() { return this.loginForm.get('password') }
 
-  loginHandler() : void {
+  loginHandler(): void {
     if (this.loginForm.invalid) {
       return;
     }
-    console.log(this.loginForm.value);
+    this.store.dispatch(loginStart({ email: this.loginForm.value.email, password: this.loginForm.value.password }));
+
   }
 }
