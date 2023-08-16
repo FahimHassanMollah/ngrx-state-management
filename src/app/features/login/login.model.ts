@@ -6,3 +6,7 @@ export interface ILoggedInUser {
     localId: string;
     registered: boolean;
 } 
+
+export interface ILoginState {
+    user: ILoggedInUser | null;
+}

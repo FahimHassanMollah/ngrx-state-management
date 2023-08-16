@@ -16,7 +16,7 @@ export class LoginEffects {
                 return this.loginService.login(action.email, action.password).pipe(
                     map((data) => {
                         console.log(data);
-                        return loginSuccess({ email: '', userId: '', token: '', expirationDate: new Date(new Date().getTime() + +4 * 1000) });
+                        return loginSuccess({ user: data } );
                     }),
                     catchError(() => EMPTY)
                 );

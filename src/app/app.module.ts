@@ -1,6 +1,5 @@
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
@@ -15,6 +14,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginEffects } from './features/login/login.effects';
+import { LoaderComponent } from './components/loader/loader.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +23,7 @@ import { LoginEffects } from './features/login/login.effects';
     AddpostComponent,
     EditPostComponent,
     LoginComponent,
+    LoaderComponent,
     
   ],
   imports: [
