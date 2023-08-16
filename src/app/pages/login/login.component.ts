@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { loginStart } from 'src/app/features/login/login.actions';
+import { setLoading } from 'src/app/features/shared/shared.action';
 
 @Component({
   selector: 'app-login',
@@ -27,6 +28,7 @@ export class LoginComponent {
     if (this.loginForm.invalid) {
       return;
     }
+    this.store.dispatch(setLoading({ loading: true }));
     this.store.dispatch(loginStart({ email: this.loginForm.value.email, password: this.loginForm.value.password }));
 
   }
