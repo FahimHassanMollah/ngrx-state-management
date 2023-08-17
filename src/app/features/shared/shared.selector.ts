@@ -8,4 +8,8 @@ export const loading = createSelector(sharedFeatureSelector,(state) => {
     return state.loading;
 })
 
+export const selectErrorMessage = createSelector(sharedFeatureSelector,(state) => {
+    return state.errorMessage;
+})
+
 

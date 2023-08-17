@@ -1,2 +1,5 @@
 <app-loader *ngIf="loading$ | async "/>
+<div>
+    <p *ngIf="(errorMessage$ | async) as errorMessage">{{errorMessage}}</p>
+</div>
 <router-outlet></router-outlet>

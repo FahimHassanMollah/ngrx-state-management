@@ -1,5 +1,6 @@
 import { ISharedState } from "./shared.model";
 
 export const initialState: ISharedState = {
-    loading: false
+    loading: false,
+    errorMessage: null
 }
