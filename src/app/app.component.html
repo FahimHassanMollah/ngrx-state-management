@@ -1,4 +1,5 @@
 <app-loader *ngIf="loading$ | async "/>
+<app-navbar></app-navbar>
 <div>
     <p *ngIf="(errorMessage$ | async) as errorMessage">{{errorMessage}}</p>
 </div>

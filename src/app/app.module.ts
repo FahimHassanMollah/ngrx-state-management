@@ -15,6 +15,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginEffects } from './features/login/login.effects';
 import { LoaderComponent } from './components/loader/loader.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import { LoaderComponent } from './components/loader/loader.component';
     EditPostComponent,
     LoginComponent,
     LoaderComponent,
+    NavbarComponent,
     
   ],
   imports: [

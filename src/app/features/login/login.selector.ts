@@ -1,13 +1,11 @@
 import { createFeatureSelector, createSelector } from "@ngrx/store";
+import { ILoginState } from "./login.model";
 
-export const loginFeatureSelector = createFeatureSelector<IPostState>('login');
+export const loginFeatureSelector = createFeatureSelector<ILoginState>('login');
 
-export const posts = createSelector(loginFeatureSelector,(state) => {
-    console.log(state);
-    return state.posts;
+export const isauthenticatedSelector = createSelector(loginFeatureSelector,(state) => {
+    return state.user !== null;
 })
 
-export const post = createSelector(loginFeatureSelector,(state) => {
-    return state.post;
-})
+
 
