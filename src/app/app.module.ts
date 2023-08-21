@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginEffects } from './features/login/login.effects';
 import { LoaderComponent } from './components/loader/loader.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { SignupComponent } from './pages/signup/signup.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     LoginComponent,
     LoaderComponent,
     NavbarComponent,
+    SignupComponent,
     
   ],
   imports: [
