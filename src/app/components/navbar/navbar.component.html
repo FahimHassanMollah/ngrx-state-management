@@ -20,6 +20,9 @@
               <button class="nav-link">Logout</button>
             </li>
           </ng-template>
+          <li class="nav-item" *ngIf="!(isauthenticated$ | async)">
+            <a routerLink="/signup" class="nav-link">Sign Up</a>
+          </li>
           <!-- <li class="nav-item">
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
           </li> -->
