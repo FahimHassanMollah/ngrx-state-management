@@ -17,6 +17,7 @@ import { LoginEffects } from './features/login/login.effects';
 import { LoaderComponent } from './components/loader/loader.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { SignupEffects } from './features/signup/signup.effects';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,7 @@ import { SignupComponent } from './pages/signup/signup.component';
     AppRoutingModule,
     StoreModule.forRoot(appReducer),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
-    EffectsModule.forRoot([LoginEffects])
+    EffectsModule.forRoot([LoginEffects,SignupEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]

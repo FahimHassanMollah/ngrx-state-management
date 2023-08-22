@@ -1,4 +1,4 @@
-export interface ILoggedInUser {
+export interface ISignupUser {
     idToken: string;
     email: string;
     refreshToken: string;
@@ -7,6 +7,6 @@ export interface ILoggedInUser {
     registered: boolean;
 } 
 
-export interface ILoginState {
-    user: ILoggedInUser | null;
+export interface ISignupState {
+    user: ISignupUser | null;
 }

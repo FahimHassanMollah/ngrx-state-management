@@ -1,5 +1,5 @@
-import { ILoginState } from "./login.model";
+import { ISignupState } from "./signup.model";
 
-export const initialState : ILoginState = {
+export const initialState : ISignupState = {
     user : null
 }
