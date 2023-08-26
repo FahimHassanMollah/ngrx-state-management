@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { loading, selectErrorMessage } from './features/shared/shared.selector';
 import { Observable } from 'rxjs';
+import { autoLogin } from './features/login/login.actions';
 
 @Component({
   selector: 'app-root',
@@ -13,5 +14,8 @@ export class AppComponent {
   loading$ :  Observable<boolean>  = this.store.select(loading);
   errorMessage$ :  Observable<string | null>  = this.store.select(selectErrorMessage);
   constructor(private store: Store) { }
-
+  
+  ngOnInit () {
+    this.store.dispatch(autoLogin())
+  }
 }
